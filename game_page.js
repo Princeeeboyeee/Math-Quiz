@@ -27,3 +27,83 @@ function send () {
 
 }
 
+function check () {
+
+    var question_turn = player_name1;
+
+    var answer_turn = player_name2;
+
+    get_answer = document.getElementById("input_box").value;
+
+    var answer = parseInt(get_answer);
+
+    console.log("The Answer Entered Is: ");
+
+    console.log(answer);
+
+    if (answer == actual_answer ) {
+
+        if (answer_turn == player_name1) {
+
+            player_score1 = player_score1 + 1;
+
+            document.getElementById("player1_score").innerHTML = player_score1; 
+
+        } else {
+
+            player_score2 = player_score2 + 1;
+
+            document.getElementById("player2_score").innerHTML = player_score2;
+
+        }
+
+    } else {
+
+        if (question_turn == player_name1) {
+
+            player_score1 = player_score1 + 1;
+
+            document.getElementById("player1_score").innerHTML = player_score1; 
+
+        } else {
+
+            player_score2 = player_score2 + 1;
+
+            document.getElementById("player2_score").innerHTML = player_score2;
+
+        }
+
+    }
+
+    if (answer_turn == player_name1) {
+
+        answer_turn = player_name2;
+
+        document.getElementById("player_answer").innerHTML = "Player Who Answers - " + answer_turn;
+
+    } else {
+
+        answer_turn = player_name1;
+
+        document.getElementById("player_answer").innerHTML = "Player Who Answers - " + answer_turn;
+
+    }
+
+    if (question_turn == player_name1) {
+
+        question_turn = player_name2;
+
+        document.getElementById("player_question").innerHTML = "Player Who Asks - " + question_turn;
+
+    } else {
+
+        question_turn = player_name1;
+
+        document.getElementById("player_question").innerHTML = "Player Who Asks - " + question_turn;
+
+    }
+
+    document.getElementById("output").innerHTML.replace(row, "");
+
+}
+
